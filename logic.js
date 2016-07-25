@@ -33,6 +33,7 @@ var targetWord = "";
 var wrongLetters = [];
 var lettersInWord = [];
 var blanksAndLetters = [];
+var frequency = [];
 
 // Game Counters
 var numBlanks = 0;
@@ -44,7 +45,7 @@ var lossCount = 0;
 // ==============================================================
 function startGame()
 {
-	targetWord = wordBank[Math.floor(Math.random() * wordBank.length)];
+	targetWord = randomWord();
 	lettersInWord = targetWord.split("");
 	numBlanks = lettersInWord.length;
 
@@ -149,6 +150,23 @@ function playAudio()
 	var filePath = './assets/sounds/' + targetWord + '.mp3';
 	var audio = new Audio(filePath);
 	audio.play();
+}
+
+function randomWord()
+{
+	var word = wordBank[Math.floor(Math.random() * wordBank.length)];
+	if(frequency.indexOf(word) != -1){
+		word = randomWord();
+	}
+	else{
+		frequency.push(word);
+	}
+
+	if(frequency.length > 3){
+		frequency.shift();
+	}
+
+	return word;
 }
 
 // MAIN PROCESS
