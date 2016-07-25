@@ -18,13 +18,13 @@ var wordBank = [
 	'november',
 	'oscar',
 	'papa',
-	'qubec',
+	'quebec',
 	'romeo',
 	'sierra',
 	'tango',
 	'uniform',
 	'victor',
-	'whisky',
+	'whiskey',
 	'x-ray',
 	'yankee',
 	'zulu'
@@ -129,17 +129,26 @@ function completedRound()
 	// Determine win/loss condition
 	if(blanksAndLetters.toString() == lettersInWord.toString())
 	{
-		alert('You Win!');
+		
+		playAudio();
 		winCount++;
 		startGame();// Reset our game for a new round
 	}
 	else if(guessesLeft == 0)
 	{
 		alert('You Lost!');
+		playAudio();
 		lossCount++;
 		startGame();
 	}
 	
+}
+
+function playAudio()
+{
+	var filePath = './assets/sounds/' + targetWord + '.mp3';
+	var audio = new Audio(filePath);
+	audio.play();
 }
 
 // MAIN PROCESS
