@@ -162,7 +162,7 @@ function randomWord()
 		frequency.push(word);
 	}
 
-	if(frequency.length > 3){
+	if(frequency.length > 4){
 		frequency.shift();
 	}
 
