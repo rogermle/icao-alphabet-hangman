@@ -68,7 +68,7 @@ function startGame()
 
 	// Change HTML to reflect game state
 
-	document.getElementById('targetWord').innerHTML = blanksAndLetters.join(" ").toUpperCase();
+	document.getElementById('targetWord').innerHTML = blanksAndLetters.join(" ");
 	document.getElementById('wrongLetters').innerHTML = wrongLetters.join(" ");
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
 	document.getElementById('winCounter').innerHTML = winCount;
@@ -122,7 +122,7 @@ function completedRound()
 
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
 
-	document.getElementById('targetWord').innerHTML = blanksAndLetters.join(" ");
+	document.getElementById('targetWord').innerHTML = blanksAndLetters.join(" ").toUpperCase();
 
 	document.getElementById('wrongLetters').innerHTML = wrongLetters.join(" ");
 
