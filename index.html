@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ICAO Alphabet Hangman</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+				<h1>ICAO Alphabet Hangman</h1>
+				<p></p>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Word to Guess</h3>
+			</div>
+			<div class="panel-body">
+				<h2 id="targetWord"></h2>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				Wrong Guesses: <span id="wrongLetters"></span>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				Guesses Left: <span id="numGuesses"></span>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				Win Counter: <span id="winCounter"></span>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				Loss Counter: <span id="lossCounter"></span>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="logic.js"></script>
+</body>
+</html>
