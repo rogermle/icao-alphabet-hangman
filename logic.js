@@ -118,6 +118,22 @@ function checkLetter(letter)
 
 function completedRound()
 {
+	// Determine win/loss condition
+	if(blanksAndLetters.toString() == lettersInWord.toString())
+	{
+		
+		playAudio();
+		winCount++;
+		setTimeout(startGame, 1500);
+	}
+	else if(guessesLeft == 0)
+	{
+		playAudio();
+		blanksAndLetters = targetWord.split("");
+		lossCount++;
+		setTimeout(startGame, 1500);
+	}
+
 	//Update Board to reflect changes
 
 	document.getElementById('numGuesses').innerHTML = guessesLeft;
@@ -125,22 +141,6 @@ function completedRound()
 	document.getElementById('targetWord').innerHTML = blanksAndLetters.join(" ").toUpperCase();
 
 	document.getElementById('wrongLetters').innerHTML = wrongLetters.join(" ");
-
-	// Determine win/loss condition
-	if(blanksAndLetters.toString() == lettersInWord.toString())
-	{
-		
-		playAudio();
-		winCount++;
-		startGame();// Reset our game for a new round
-	}
-	else if(guessesLeft == 0)
-	{
-		alert('You Lost!');
-		playAudio();
-		lossCount++;
-		startGame();
-	}
 	
 }
 
